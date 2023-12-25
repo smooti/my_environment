@@ -2,3 +2,5 @@
 playbook-artifact-*
 # Ignore `ansible-navigator` log file
 ansible-navigator.log
+# Do not include swp files caused by file open with vim editor
+*.swp
