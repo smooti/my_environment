@@ -3,7 +3,7 @@ set number " Add line numbers
 set nobackup " Do not create backup file
 set nowrap " No line wrapping
 set hlsearch " Configure search hghlighting
-set cursorline " Highlight cursor line position
+" set cursorline " Highlight cursor line position
 " set cursorcolumn " Highlight cursor column position
 set mouse=a " Enable mouse in all modes
 set tabstop=4 " Set tab width to 4 columns.
