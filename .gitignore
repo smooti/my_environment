@@ -1,0 +1,4 @@
+# Ignore playbook artifacts generated from `ansible-navigator`
+playbook-artifact-*
+# Ignore `ansible-navigator` log file
+ansible-navigator.log

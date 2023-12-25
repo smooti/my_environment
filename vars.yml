@@ -1,0 +1,15 @@
+vim_paths:
+  - ~/.vim/autoload/
+  - ~/.vim/general/
+  - ~/.vim/plugged/
+  - ~/.vim/pluggs/
+
+vim_config_files:
+  - src: files/vim/vimrc
+    dest: ~/.vimrc
+
+  - src: files/vim/general/main.vim
+    dest: ~/.vim/general/main.vim
+
+  - src: files/vim/pluggs/main.vim
+    dest: ~/.vim/pluggs/main.vim
