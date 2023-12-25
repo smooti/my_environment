@@ -1,11 +1,23 @@
 ---
 - name: My environment
   hosts: localhost
-  become: false
-  gather_facts: false
+  become: true
+  gather_facts: true
   vars_files:
     - vars.yml
   tasks:
+    - name: Ensure packages are present [RedHat]
+      when: "ansible_facts['distribution'] == 'RedHat'"
+      ansible.builtin.dnf:
+        name: "{{ packages }}"
+        state: present
+
+    - name: Ensure packages are present [Ubuntu]
+      when: "ansible_facts['distribution'] == 'Ubuntu'"
+      ansible.builtin.apt:
+        name: "{{ packages }}"
+        state: present
+
     - name: Ensure directory exists
       loop: "{{ vim_paths }}"
       ansible.builtin.file:

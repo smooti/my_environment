@@ -1,3 +1,6 @@
+packages:
+  - vim
+
 vim_paths:
   - ~/.vim/autoload/
   - ~/.vim/general/
