@@ -1,5 +1,5 @@
 call plug#begin('~/.vim/plugged')
 
-" Plug 'catppuccin/vim', { 'as': 'catppuccin' }
+Plug 'Yggdroot/indentLine'
 
 call plug#end()
