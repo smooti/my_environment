@@ -34,3 +34,6 @@
         dest: "{{ item['dest'] }}"
         force: true
 
+    - name: Ensure vim plugins are present
+      ansible.builtin.command: "/usr/bin/vim -c 'PlugInstall --sync' -c ':qa'"
+
