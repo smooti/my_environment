@@ -1,6 +1,6 @@
 ---
 - name: My environment
-  hosts: localhost
+  hosts: "{{ my_host | default('localhost') }}"
   become: false
   gather_facts: true
   vars_files:
@@ -21,7 +21,7 @@
             name: "{{ packages }}"
             state: present
 
-    - name: Ensure directory exists
+    - name: Ensure vim directories exist
       loop: "{{ vim_paths }}"
       ansible.builtin.file:
         path: "{{ item }}"
@@ -32,6 +32,12 @@
       ansible.builtin.copy:
         src: "{{ item['src'] }}"
         dest: "{{ item['dest'] }}"
+        force: true
+
+    - name: Ensure tmux config file is present
+      ansible.builtin.copy:
+        src: "{{ tmux_config_file['src'] }}"
+        dest: "{{ tmux_config_file['dest'] }}"
         force: true
 
     - name: Ensure vim plugins are present

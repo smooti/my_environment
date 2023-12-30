@@ -16,3 +16,8 @@ vim_config_files:
 
   - src: files/vim/pluggs/main.vim
     dest: ~/.vim/pluggs/main.vim
+
+tmux_config_file:
+  src: files/tmux.conf
+  dest: ~/.tmux.conf
+
