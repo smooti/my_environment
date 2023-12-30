@@ -1,5 +1,6 @@
 packages:
   - vim
+  - tmux
 
 vim_paths:
   - ~/.vim/autoload/
