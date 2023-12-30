@@ -40,6 +40,12 @@
         dest: "{{ tmux_config_file['dest'] }}"
         force: true
 
+    - name: Ensure ansible-navigator config file is present
+      ansible.builtin.copy:
+        src: "{{ ansible_navigator_file['src'] }}"
+        dest: "{{ ansible_navigator_file['dest'] }}"
+        force: true
+
     - name: Ensure vim plugins are present
       ansible.builtin.command: "/usr/bin/vim -c 'PlugInstall --sync' -c ':qa'"
 

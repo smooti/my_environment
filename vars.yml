@@ -22,3 +22,6 @@ tmux_config_file:
   src: files/tmux.conf
   dest: ~/.tmux.conf
 
+ansible_navigator_file:
+  src: files/ansible-navigator.yml
+  dest: ~/.ansible-navigator.yml
