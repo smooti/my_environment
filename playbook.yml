@@ -34,21 +34,16 @@
         dest: "{{ item['dest'] }}"
         force: true
 
-    - name: Ensure tmux config file is present
+    - name: Ensure other config files are present
+      loop: "{{ lookup('dict', config_files) }}"
       ansible.builtin.copy:
-        src: "{{ tmux_config_file['src'] }}"
-        dest: "{{ tmux_config_file['dest'] }}"
-        force: true
-
-    - name: Ensure ansible-navigator config file is present
-      ansible.builtin.copy:
-        src: "{{ ansible_navigator_file['src'] }}"
-        dest: "{{ ansible_navigator_file['dest'] }}"
+        src: "{{ item['value']['src'] }}"
+        dest: "{{ item['value']['dest'] }}"
         force: true
 
     - name: Ensure vim plugins are present
       ansible.builtin.command: "/usr/bin/vim -c 'PlugInstall --sync' -c ':qa'"
 
     - name: Ensure tmux config is loaded
-      ansible.builtin.command: "/usr/bin/tmux source-file {{ tmux_config_file['dest'] }}"
+      ansible.builtin.command: "/usr/bin/tmux source-file {{ config_files['tmux']['dest'] }}"
 
