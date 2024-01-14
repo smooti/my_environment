@@ -4,14 +4,7 @@ packages:
 
 vim_paths:
   - ~/.vim/autoload/
-  - ~/.vim/general/
-
-vim_config_files:
-  - src: files/vim/vimrc
-    dest: ~/.vimrc
-
-  - src: files/vim/general/main.vim
-    dest: ~/.vim/general/main.vim
+  - ~/.vim/plugins/
 
 config_files:
   tmux:
@@ -21,4 +14,8 @@ config_files:
   ansible_nvaigator:
     src: files/ansible-navigator.yml
     dest: ~/.ansible-navigator.yml
+
+  vim:
+    src: files/vimrc
+    dest: ~/.vimrc
 

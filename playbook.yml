@@ -27,14 +27,7 @@
         path: "{{ item }}"
         state: directory
 
-    - name: Ensure vim config files are present
-      loop: "{{ vim_config_files }}"
-      ansible.builtin.copy:
-        src: "{{ item['src'] }}"
-        dest: "{{ item['dest'] }}"
-        force: true
-
-    - name: Ensure other config files are present
+    - name: Ensure config files are present
       loop: "{{ lookup('dict', config_files) }}"
       ansible.builtin.copy:
         src: "{{ item['value']['src'] }}"
