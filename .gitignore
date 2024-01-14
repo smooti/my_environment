@@ -4,3 +4,5 @@ playbook-artifact-*
 ansible-navigator.log
 # Do not include swp files caused by file open with vim editor
 *.swp
+# Macbook artifact
+.DS_Store
