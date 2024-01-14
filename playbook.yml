@@ -45,5 +45,6 @@
       ansible.builtin.command: "/usr/bin/vim -c 'PlugInstall --sync' -c ':qa'"
 
     - name: Ensure tmux config is loaded
+      when: "ansible_facts['distribution'] == 'Ubuntu' or ansible_facts['distribution'] == 'RedHat'"
       ansible.builtin.command: "/usr/bin/tmux source-file {{ config_files['tmux']['dest'] }}"
 
